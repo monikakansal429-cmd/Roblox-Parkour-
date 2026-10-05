@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultimate Parkour</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="menu" class="screen">
+    <h1>ULTIMATE PARKOUR</h1>
+    <p>RUN • JUMP • SURVIVE</p>
+
+    <button onclick="showLevels()">PLAY</button>
+    <button onclick="showLevels()">LEVEL SELECT</button>
+    <button onclick="showHowToPlay()">HOW TO PLAY</button>
+  </div>
+
+  <div id="levels" class="screen hidden">
+    <h1>SELECT LEVEL</h1>
+
+    <button onclick="startLevel(1)">
+      LEVEL 1<br>
+      <small>EASY ⭐</small>
+    </button>
+
+    <button onclick="startLevel(2)">
+      LEVEL 2<br>
+      <small>HARD ⭐⭐⭐</small>
+    </button>
+
+    <button onclick="startLevel(3)">
+      LEVEL 3<br>
+      <small>IMPOSSIBLE ⭐⭐⭐⭐⭐</small>
+    </button>
+
+    <button onclick="backToMenu()">BACK</button>
+  </div>
+
+  <div id="howto" class="screen hidden">
+    <h1>HOW TO PLAY</h1>
+
+    <p>⬅️ A / LEFT ARROW = MOVE LEFT</p>
+    <p>➡️ D / RIGHT ARROW = MOVE RIGHT</p>
+    <p>⬆️ SPACE / W = JUMP</p>
+    <p>⚡ SHIFT = SPRINT</p>
+    <p>🔄 R = RESTART</p>
+    <p>⏸️ P = PAUSE</p>
+
+    <button onclick="backToMenu()">BACK</button>
+  </div>
+
+  <div id="game" class="hidden">
+
+    <div id="hud">
+      <span>LEVEL: <b id="levelText">1</b></span>
+      <span>❤️ <b id="lives">3</b></span>
+      <span>🪙 <b id="coins">0</b></span>
+      <span>⭐ <b id="score">0</b></span>
+      <span>⏱️ <b id="timer">0</b></span>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="mobileControls">
+      <button id="leftBtn">◀</button>
+      <button id="jumpBtn">▲</button>
+      <button id="rightBtn">▶</button>
+      <button id="sprintBtn">⚡</button>
+    </div>
+
+  </div>
+
+  <div id="message" class="screen hidden">
+    <h1 id="messageTitle">LEVEL COMPLETE!</h1>
+    <p id="messageText"></p>
+
+    <button id="nextButton" onclick="nextLevel()">NEXT LEVEL</button>
+    <button onclick="restartCurrentLevel()">REPLAY</button>
+    <button onclick="showLevels()">LEVEL SELECT</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
